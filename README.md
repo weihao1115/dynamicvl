@@ -19,7 +19,7 @@ DynamicVL is a comprehensive framework for analyzing long-term urban dynamics th
 
 
 
-### Environment Setup
+## Environment Setup
 ```bash
 # Create the conda environment
 conda create -n dvl python=3.10 -y
