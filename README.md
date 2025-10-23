@@ -3,6 +3,9 @@
   <a href="https://arxiv.org/abs/2505.21076">
     <img src="https://img.shields.io/badge/ArXiv-2505.21076-b31b1b.svg?logo=arXiv" alt="ArXiv">
   </a>
+  <a href="https://huggingface.co/datasets/weihao1115/dvl_suite">
+    <img src="https://img.shields.io/badge/HuggingFace-Dataset-yellow.svg?logo=huggingface&logoColor=white" alt="Hugging Face Dataset">
+  </a>
 </p>
 <h5 align="center">
   <em>Weihao Xuan, Junjue Wang, Heli Qi, Zihang Chen, Zhuo Zheng, Yanfei Zhong, Junshi Xia, Naoto Yokoya</em>
