@@ -15,7 +15,7 @@
 DynamicVL is a comprehensive framework for analyzing long-term urban dynamics through remote sensing imagery. This repository ships the DVL-Suite dataset, task-specific benchmarks, and evaluation scripts that cover both closed-form vision-language tasks and pixel-level change detection.
 
 ## News
-- **2025/08** &nbsp; DynamicVL was accepted to NeurIPS 2025!
+- **2025/08** &nbsp; DynamicVL was accepted to NeurIPS 2025! We will add encoder-decoder-based semantic change detection implementations to this repo. Stay tuned!
 
 
 
