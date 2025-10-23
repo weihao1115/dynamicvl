@@ -16,28 +16,28 @@ DynamicVL is a comprehensive framework for analyzing long-term urban dynamics th
 
 
 
-## Installation
+### Environment Setup
 ```bash
-# Create the benchmark environment
+# Create the conda environment
 conda create -n dvl python=3.10 -y
 conda activate dvl
 
-# Install DynamicVL in editable mode
+# Install the package
 (dvl): pip install -e .
 
-# Optional: override PyTorch if the vLLM dependency conflicts with your CUDA stack
+# Optional: manually install PyTorch if the vLLM dependency conflicts with your environment
+# Note: Downgrade cu128 if it conflicts with your CUDA drivers.
 (dvl): pip install -U torch torchvision xformers --index-url https://download.pytorch.org/whl/cu128
 
-# Optional: resolve "GLIBCXX_3.4.32 not found" errors on older systems
+# Optional: fix "version `GLIBCXX_3.4.32' not found" errors
 (dvl): conda install -c conda-forge gcc=13 gxx=13 -y
 (dvl): export LD_LIBRARY_PATH=$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 ```
 
-## Data Preparation
-Download the DVL-Suite archive from HuggingFace and unpack the training and test splits:
+## Data Setup
+Download the DVL-Suite dataset and unzip the training and test archives:
 ```bash
 mkdir data && cd data
-huggingface-cli download --repo-type dataset weihao1115/dvl_suite --local-dir ./
 unzip train.zip
 unzip test.zip
 ```
@@ -63,7 +63,7 @@ data/
     └── [same structure as train/]
 ```
 
-## Benchmarking
+## Usage
 
 ### Vision-Language Tasks
 
@@ -83,12 +83,20 @@ for item in dataset:
 ```bash
 (dvl): python -m dvl.vqa.run_vllm \
     --model_id Qwen/Qwen2.5-VL-3B-Instruct \
-    --subset BCA-QA \
-    --batch_size 2
+    --subset BCA-QA
 ```
+**Available subsets:**
+- `BCA-QA` - Basic Change Analysis (QA)
+- `CSE-QA` - Change Speed Estimation (QA)
+- `BCA-Report` - Basic Change Analysis (Report)
+- `CSE-Report` - Change Speed Estimation (Report)
+- `DTC` - Dense Temporal Caption
+- `RCC` - Regional Change Caption
+- `EA` - Environmental Assessment
+
 > **Note:** Set `--batch_size 1` for `llava-hf/llava-onevision-qwen2-7b-ov-hf` to avoid GPU OOM.
 
-Outputs are stored under `results/vqa/{model_id}/` with both `.jsonl` predictions and `.json` summaries.
+**Output:** `results/vqa/Qwen--Qwen2.5-VL-3B-Instruct/` stores `.jsonl` predictions and `.json` summaries.
 
 #### Evaluate Commercial Models (Azure OpenAI)
 ```bash
@@ -100,6 +108,7 @@ export AZURE_OPENAI_API_VERSION="{your-api-version}"
     --model_id gpt-4o \
     --subset BCA-QA
 ```
+**Output:** `results/vqa/gpt-4o/` stores task-specific `.jsonl` predictions and `.json` metrics.
 
 #### GPT-Based Evaluation for Reports and Captions
 ```bash
@@ -112,7 +121,13 @@ export AZURE_OPENAI_API_VERSION="{your-api-version}"
     --eval_model_id "Qwen/Qwen2.5-VL-3B-Instruct" \
     --subset DTC
 ```
-Supported subsets: `BCA-Report`, `CSE-Report`, `DTC`, `RCC`. Results are written to `results/vqa/{model_id}/` and include GPT-scored `.jsonl` files.
+**Supported subsets:**
+- `BCA-Report`
+- `CSE-Report`
+- `DTC`
+- `RCC`
+
+**Output:** `results/vqa/Qwen--Qwen2.5-VL-3B-Instruct/` includes GPT-scored `.jsonl` files (for example `DTC.gpt-4.1-mini.jsonl`).
 
 #### Aggregate Metrics
 ```bash
@@ -157,7 +172,7 @@ Run the evaluation utilities:
 # MambaCD-style semantic change detection metrics
 (dvl): python -m dvl.vqa.pretty_print.referseg_cd --pred_dir "{your-pred-dir}"
 ```
-Scores are printed and cached alongside your predictions.
+Scores are printed to console and stored alongside the submitted prediction masks.
 
 ## Citation
 If you find DynamicVL useful, please cite:
