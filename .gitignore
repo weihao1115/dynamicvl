@@ -1,0 +1,12 @@
+.DS_Store
+.idea/
+.claude/
+.gemini/
+
+*.egg-info
+**/__pycache__
+
+data/
+pretrained/
+results/
+temp/
