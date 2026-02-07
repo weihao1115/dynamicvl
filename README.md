@@ -8,7 +8,7 @@
   </a>
 </p>
 <h5 align="center">
-  <em>Weihao Xuan, Junjue Wang, Heli Qi, Zihang Chen, Zhuo Zheng, Yanfei Zhong, Junshi Xia, Naoto Yokoya</em>
+  *[Weihao Xuan](https://weihaoxuan.com/)*, [Junjue Wang](https://junjuewang.top/)*, Heli Qi, Zihang Chen, [Zhuo Zheng](https://zhuozheng.top/), [Yanfei Zhong](https://scholar.google.com/citations?user=Fm7XZ5AAAAAJ&hl=en), [Junshi Xia](https://scholar.google.com/citations?user=n1aKdTkAAAAJ&hl=en), [Naoto Yokoya](https://naotoyokoya.com/)*
 </h5>
 
 ## About
