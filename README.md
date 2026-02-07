@@ -8,7 +8,7 @@
   </a>
 </p>
 <h5 align="center">
-  *[Weihao Xuan](https://weihaoxuan.com/)*, [Junjue Wang](https://junjuewang.top/)*, Heli Qi, Zihang Chen, [Zhuo Zheng](https://zhuozheng.top/), [Yanfei Zhong](https://scholar.google.com/citations?user=Fm7XZ5AAAAAJ&hl=en), [Junshi Xia](https://scholar.google.com/citations?user=n1aKdTkAAAAJ&hl=en), [Naoto Yokoya](https://naotoyokoya.com/)*
+  <a href="https://weihaoxuan.com/">Weihao Xuan</a><sup>*</sup>, <a href="https://junjuewang.top/">Junjue Wang</a><sup>*</sup>, Heli Qi, Zihang Chen, <a href="https://zhuozheng.top/">Zhuo Zheng</a>, <a href="https://scholar.google.com/citations?user=Fm7XZ5AAAAAJ&hl=en">Yanfei Zhong</a>, <a href="https://scholar.google.com/citations?user=n1aKdTkAAAAJ&hl=en">Junshi Xia</a>, <a href="https://naotoyokoya.com/">Naoto Yokoya</a>
 </h5>
 
 ## About
